@@ -1,1 +1,11 @@
-{ "name": "My Preso", "sections": [ {"section":"one"} ]}
+{
+    "name": "Python Sucks",
+    "sections":
+        [
+            {"section": "0_intro"},
+            {"section": "1_context"},
+            {"section": "2_problem"},
+            {"section": "3_proposal"},
+            {"section": "4_conclusion"}
+        ]
+}
