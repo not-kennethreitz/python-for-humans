@@ -1,3 +1,4 @@
+
 !SLIDE
 # Part II: Beginnings
 
@@ -101,25 +102,48 @@ Let's play around. Maybe play with the GitHub API?
 
 If this was you, you'd leave Python and never come back.
 
-!SLIDE
-# Step 3: Install Packages.
-* Setuptools? Distribute?
-* Pip? Easy_install?
 
 !SLIDE
-# "I'll just stick my dependencies in the path."
+# http/url/lib/2
 
-* Only works for pure-python modules.
-* Only works with relative imports.
-
-* Virtualenv?
-
-* Easy_uninstall?
-
+- Which module to use?
+- Worst API ever.
+- An *extremely* common use case.
+- I'd rather be writing ColdFusion™.
 
 !SLIDE
-# Common Pitfalls
-* easy_uninstall?
+# XML
+
+- `etree` is terrible.
+- `lxml` is awesome, but difficult to install.
+
+!SLIDE
+# File and System Operations
+- sys | shutils | os | os.path | io
+- Really difficult to run external commands.
+- This blocks dev+ops folks from adopting Python.
+
+!SLIDE
+# Packaging and Depdencies
+- pip or easy install?
+- setuptools isn't included with python? Distribute?
+- No easy_uninstall?
+- Broken `setup.py`s
+- "Released" packages not in the Cheeseshop
+
+!SLIDE
+# Date[time]s.
+- Which module to use?
+- Timezones
+- The stdlib can generate but not parse ISO8601 dates
+
+!SLIDE
+# Unicode.
+- LOLWUT
+
+!SLIDE
+# Testing.
+
 
 !SLIDE
 # Installing Dependencies
@@ -128,6 +152,7 @@ If this was you, you'd leave Python and never come back.
 * python-mysql
 * mod_wsgi
 
+!SLIDE
 # Integration Time
 
 !SLIDE

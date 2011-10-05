@@ -3,10 +3,10 @@
 
 Python needs more Pragmatic Packages.
 
-!SLIDE small
+!SLIDE dark
 
-pra•gmat•ic |pragˈmatik|,
-*adj*, dealing with things sensibly and realistically in a way that is
+## pra•gmat•ic |pragˈmatik|, *adj*:
+Dealing with things sensibly and realistically in a way that is
 based on practical rather than theoretical considerations.
 
 !SLIDE
@@ -20,10 +20,23 @@ based on practical rather than theoretical considerations.
 !SLIDE
 # NOT PRACTICAL (cont)
 
+
+!SLIDE
+# The Codez, they are ugleh.
+
+[trollface or something]
+
+!SLIDE
+## Unless there's an explicit requirement,
+## a student should never see urllib2.
+
+# No excuses.
+
 !SLIDE
 # Practical.
 
     @@@ ruby
+    ruby codez
 
 !SLIDE
 # Pragmatic.
@@ -42,13 +55,34 @@ based on practical rather than theoretical considerations.
 # Fit the 90% Use Case.
 
 !SLIDE
-# Fit the 90% Use Case.
+# The API is all that matters.
+
+## Everything else is secondary.
+
+!SLIDE incremental
+# Everything.
+
+- Features.
+- Efficiency.
+- Performance.
+- Corner-cases.
 
 !SLIDE
 # urllib2
 
 "I'd rather be writing ColdFusion."
 
-!SLIDE
+!SLIDE small
 # subprocess
-- envoy
+
+A powerful module that .
+
+    @@@ python
+    import envoy
+
+    c = envoy.run('ls')
+.
+
+    @@@ pycon
+    >>> c.status_code
+    200

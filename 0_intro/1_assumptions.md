@@ -5,14 +5,13 @@
 - *Not* anarchy
 
 !SLIDE
-# This talk is not...
-- A call for anarchy
-- A criticism of Python
-- A dump of language-level issues
+# For the record...
+
+- *Not* a
 
 !SLIDE
-# This talk is...
+# This talk is:
 
 - A call for reevaluate our values
-- A manifesto?
+- A
 - Most of the problems that we're going to discuss today are simple.
