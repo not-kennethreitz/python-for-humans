@@ -10,7 +10,7 @@
 * Python is a Cancer™
 * Kennethreitz Has Jumped the Shark™
 
-I ♥ PYTHON
+I ♥ PYTHON!
 
 !SLIDE
 # ~Pragmatic Python
