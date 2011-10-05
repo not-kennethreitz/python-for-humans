@@ -44,8 +44,14 @@ Let's play around. Maybe play with the GitHub API?
 
     puts r
 
+!SLIDE
+# http/url/lib/2
+- Extremely unclear why there are so many modules.
+- Search implies urllib2.
+- Let's give this a shot...
+
 !SLIDE smaller code execute
-# Python.
+# Python (hours later).
     @@@ python
     import urllib2
 
@@ -65,15 +71,50 @@ Let's play around. Maybe play with the GitHub API?
 
     print handler.read()
 
+!SLIDE smaller code execute
+#But wait — there's more!
+
+    @@@ python
+
+    import re
+
+    class HTTPForcedBasicAuthHandler(HTTPBasicAuthHandler):
+
+        auth_header = 'Authorization'
+        rx = re.compile('(?:.*,)*[ \t]*([^ \t]+)[ \t]+'
+                        'realm=(["\'])(.*?)\\2', re.I)
+
+        def __init__(self,  *args, **kwargs):
+            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
+
+        def http_error_401(self, req, fp, code, msg, headers):
+            url = req.get_full_url()
+            response = self._http_error_auth_reqed(
+                'www-authenticate', url, req, headers)
+            self.reset_retry_count()
+            return response
+
+        http_error_404 = http_error_401
+
 !SLIDE
-# http/url/lib/2
+# Admit it.
 
-
+If this was you, you'd leave Python and never come back.
 
 !SLIDE
 # Step 3: Install Packages.
+* Setuptools? Distribute?
+* Pip? Easy_install?
 
-* MySQL-Python
+!SLIDE
+# "I'll just stick my dependencies in the path."
+
+* Only works for pure-python modules.
+* Only works with relative imports.
+
+* Virtualenv?
+
+* Easy_uninstall?
 
 
 !SLIDE
