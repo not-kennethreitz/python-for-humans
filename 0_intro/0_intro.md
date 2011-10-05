@@ -1,16 +1,31 @@
 !SLIDE
-# API Design
-# and
-# Pragmatic Python
+# OCTOCATS!
+
+(CRAZY JAVASCRIPT AWESOMENESS)
+
+!SLIDE
+
+:)
+
+!SLIDE
+# Preface
 
 !SLIDE bullets incremental
 # Name Iterations
 
+* Python is a Ghetto
 * Why Python Sucks
 * Python is a Cancer™
 * Kennethreitz Has Jumped the Shark™
 
+!SLIDE
+
+# **LIES**
+
+!SLIDE
+
 I ♥ PYTHON!
+
 
 !SLIDE
 # ~Pragmatic Python
@@ -43,11 +58,18 @@ Readability.
 * ~198 Others
 
 !SLIDE
+# FOLLOW ME
+
+<3 OCTOCATS
+
+!SLIDE
 # Elsewhere
 
-The GitHub Reflog
+The GitHub Reflog™
 
-(Cash bribes and anonymous threats welcome)
+The Changelog (logo)
+
+Always keeping on top of awesome new projects from all spaces, so if you know of anything that you think others need to hear about, shoot 'em over.
 
 !SLIDE
 # ~Pragmatic Python
