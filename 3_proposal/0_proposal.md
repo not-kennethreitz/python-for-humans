@@ -1,7 +1,15 @@
-!SLIDE
-# Let's Build Things.
+!SLIDE bullets incremental
+# This is a serious problem.
 
-Python needs more Pragmatic Packages.
+
+!SLIDE bullets incremental
+# The Solution is Simple.
+
+- Build elegant tools to perform these tasks.
+- Provide a real resource for learning.
+
+!SLIDE
+## Python needs more Pragmatic Packages.
 
 !SLIDE dark
 
@@ -10,15 +18,93 @@ Dealing with things sensibly and realistically in a way that is
 based on practical rather than theoretical considerations.
 
 !SLIDE
-# Some Examples
+# An Examples.
+
+### Let's mess around. Maybe play with the GitHub API?
+!SLIDE
+
+
+
+!SLIDE small code
+
+    @@@ ruby
+    require 'net/http'
+    require 'uri'
+
+    uri = URI.parse('https://api.github.com/user')
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    req = Net::HTTP::Get.new(uri.request_uri)
+    req.basic_auth('username', 'password')
+
+    r = http.request(req)
+
+    puts r
+
+## Let's port this to Python.
+
+!SLIDE smaller code execute
+# Python (hours later).
+    @@@ python
+    import urllib2
+
+    gh_url = 'https://api.github.com/user'
+
+    req = urllib2.Request(gh_url)
+
+    password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
+    password_manager.add_password(None, gh_url, 'user', 'pass')
+
+    auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
+    opener = urllib2.build_opener(auth_manager)
+
+    urllib2.install_opener(opener)
+
+    handler = urllib2.urlopen(req)
+
+    print handler.read()
+
+!SLIDE smaller code execute
+#I lied — there's more!
+
+    @@@ python
+
+    import re
+
+    class HTTPForcedBasicAuthHandler(HTTPBasicAuthHandler):
+
+        auth_header = 'Authorization'
+        rx = re.compile('(?:.*,)*[ \t]*([^ \t]+)[ \t]+'
+                        'realm=(["\'])(.*?)\\2', re.I)
+
+        def __init__(self,  *args, **kwargs):
+            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
+
+        def http_error_401(self, req, fp, code, msg, headers):
+            url = req.get_full_url()
+            response = self._http_error_auth_reqed(
+                'www-authenticate', url, req, headers)
+            self.reset_retry_count()
+            return response
+
+        http_error_404 = http_error_401
 
 !SLIDE
-# NOT PRACTICAL
+# Admit it.
 
-[fucking urllib2 code]
+If this was you, you'd leave Python and never come back.
+
 
 !SLIDE
-# NOT PRACTICAL (cont)
+# Break it down.
+
+
+
+!SLIDE
+# Enter Requests.
+
 
 
 !SLIDE
@@ -33,13 +119,7 @@ based on practical rather than theoretical considerations.
 # No excuses.
 
 !SLIDE
-# Practical.
-
-    @@@ ruby
-    ruby codez
-
-!SLIDE
-# Pragmatic.
+# Pragmatic Package.
 
     @@@ python
     import requests
@@ -59,8 +139,8 @@ based on practical rather than theoretical considerations.
 
 ## Everything else is secondary.
 
-!SLIDE incremental
-# Everything.
+!SLIDE incremental bullets
+# I Mean ***Everything***.
 
 - Features.
 - Efficiency.

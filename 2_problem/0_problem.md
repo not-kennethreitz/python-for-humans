@@ -51,56 +51,7 @@ Let's play around. Maybe play with the GitHub API?
 - Search implies urllib2.
 - Let's give this a shot...
 
-!SLIDE smaller code execute
-# Python (hours later).
-    @@@ python
-    import urllib2
 
-    gh_url = 'https://api.github.com/user'
-
-    req = urllib2.Request(gh_url)
-
-    password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
-    password_manager.add_password(None, gh_url, 'user', 'pass')
-
-    auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
-    opener = urllib2.build_opener(auth_manager)
-
-    urllib2.install_opener(opener)
-
-    handler = urllib2.urlopen(req)
-
-    print handler.read()
-
-!SLIDE smaller code execute
-#But wait — there's more!
-
-    @@@ python
-
-    import re
-
-    class HTTPForcedBasicAuthHandler(HTTPBasicAuthHandler):
-
-        auth_header = 'Authorization'
-        rx = re.compile('(?:.*,)*[ \t]*([^ \t]+)[ \t]+'
-                        'realm=(["\'])(.*?)\\2', re.I)
-
-        def __init__(self,  *args, **kwargs):
-            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
-
-        def http_error_401(self, req, fp, code, msg, headers):
-            url = req.get_full_url()
-            response = self._http_error_auth_reqed(
-                'www-authenticate', url, req, headers)
-            self.reset_retry_count()
-            return response
-
-        http_error_404 = http_error_401
-
-!SLIDE
-# Admit it.
-
-If this was you, you'd leave Python and never come back.
 
 
 !SLIDE
