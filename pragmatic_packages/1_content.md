@@ -72,8 +72,6 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
 
 
-!SLIDE
-# Barriers to Entry
 
 
 !SLIDE
@@ -106,6 +104,8 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 # Python's net/http?
 
 ## http/url/lib/2
+
+(better in py3)
 
 !SLIDE
 
@@ -146,7 +146,7 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
                         'realm=(["\'])(.*?)\\2', re.I)
 
         def __init__(self,  *args, **kwargs):
-            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
+            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)
 
         def http_error_401(self, req, fp, code, msg, headers):
             url = req.get_full_url()
@@ -162,135 +162,27 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
 If this was you, you'd leave Python and never come back.
 
-!SLIDE
-# Fuuuuuuuuuuuuu.
-
-
-
-
-!SLIDE
-# Step 1: Pick a Release.
-Pick carefully.
-
-
-!SLIDE incremental
-# Step 2: Install Python.
-
-Decisions, decisions.
-
-* Download installer from python.org?
-* 32bit or 64bit?
-* Build from source?
-* If so, Unix or framework build?
-
-!SLIDE
-# Let's play around.
-
-Maybe play with the GitHub API?
-
-
-!SLIDE small code execute
-# Ruby.
-    @@@ ruby
-    require 'net/http'
-    require 'uri'
-
-    uri = URI.parse('https://api.github.com/user')
-
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-
-    req = Net::HTTP::Get.new(uri.request_uri)
-    req.basic_auth('username', 'password')
-
-    r = http.request(req)
-
-    puts r
-
-
-
-
-
-!SLIDE
-# http/url/lib/2
-
-- Which module to use?
-- Worst API ever.
-- An *extremely* common use case.
-- I'd rather be writing ColdFusion™.
-
-!SLIDE
-# XML
-
-- `etree` is terrible.
-- `lxml` is awesome, but difficult to install.
-
-!SLIDE
-# File and System Operations
-- sys | shutils | os | os.path | io
-- Really difficult to run external commands.
-- This blocks dev+ops folks from adopting Python.
-
-!SLIDE
-# Packaging and Depdencies
-- pip or easy install?
-- setuptools isn't included with python? Distribute?
-- No easy_uninstall?
-- Broken `setup.py`s
-- "Released" packages not in the Cheeseshop
-
-!SLIDE
-# Date[time]s.
-- Which module to use?
-- Timezones
-- The stdlib can generate but not parse ISO8601 dates
-
-!SLIDE
-# Unicode.
-- LOLWUT
-
-!SLIDE
-# Testing.
-
-
-!SLIDE
-# Installing Dependencies
-
-* Pip? Virtualenv? Never mentioned in the docs.
-* python-mysql
-* mod_wsgi
-
-!SLIDE
-# Integration Time
-
-!SLIDE
-# PIL
-
-(On OSX, this is simple)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 !SLIDE bullets incremental
+# The Problem.
+
+- Unclear which module to use in the first place.
+- Prognosis seems to be urllib2, but the docs are terrible.
+- Worst API ever.
+
+
+!SLIDE bullets incremental smaller
 # This is a serious problem.
+
+- HTTP should be as simple as the print statement.
 
 
 !SLIDE bullets incremental
 # The Solution is Simple.
 
 - Build elegant tools to perform these tasks.
-- Provide a real resource for learning.
+
 
 !SLIDE
 ## Python needs more Pragmatic Packages.
@@ -301,32 +193,39 @@ Maybe play with the GitHub API?
 Dealing with things sensibly and realistically in a way that is
 based on practical rather than theoretical considerations.
 
-
-
-
 !SLIDE
-# Break it down.
+# Python for Humans
 
+
+!SLIDE incremental
+# Let's Break it down.
+
+What *is* HTTP at it's core?
+
+- a small set of methods with consistent parameters
+- HEAD, GET, PUSH, POST, PUT, PATCH, DELETE
+- They all accept headers, url parameters, and form data.
+
+
+!SLIDE incremental
+# Urllib2 is Toxic.
+
+- Heavily over-engineered.
+- Abolishes most of PEP20.
+- Docs are impossible to read.
+- HTTP is simple. Urllib2 is absolute garbage.
+- Scares people away.
 
 
 !SLIDE
 # Enter Requests.
 
 
+!SLIDE
+# HTTP for Humans.
+
 
 !SLIDE
-# The Codez, they are ugleh.
-
-[trollface or something]
-
-!SLIDE
-## Unless there's an explicit requirement,
-## a student should never see urllib2.
-
-# No excuses.
-
-!SLIDE
-# Pragmatic Package.
 
     @@@ python
     import requests
@@ -338,13 +237,31 @@ based on practical rather than theoretical considerations.
     print r.content
 
 
+!SLIDE incremental
+# Achievement Unlocked!
+
+- a small set of methods with consistent parameters
+- HEAD, GET, PUSH, POST, PUT, PATCH, DELETE
+- They all accept headers, url parameters, and form data.
+
+!SLIDE incremental
+# Do this.
+
+
+!SLIDE
+# The Litmus Test
+If you have to refer to the documentation every time you use a module,
+find (or build) a new module.
+
 !SLIDE
 # Fit the 90% Use Case.
 
 !SLIDE
 # The API is all that matters.
 
+
 ## Everything else is secondary.
+
 
 !SLIDE incremental bullets
 # I Mean ***Everything***.
@@ -354,27 +271,116 @@ based on practical rather than theoretical considerations.
 - Performance.
 - Corner-cases.
 
+
+!SLIDE incremental bullets
+# Pivot.
+
+- At first, Requests was far from powerful.
+- Deeply resonated with people.
+- Features grew over time, API never compromised.
+
+!SLIDE incremental bullets
+# Today
+- Cookies, sessions, content-iteration, decompression, file uploads, async i/o, keep-alive, callback hooks, proxies, *&c*.
+- 17th most–watched Python GitHub project.
+- 20,000+ downloads from PyPi.
+- Twitter, Library of Congress, Readability, etc.
+
+
+!SLIDE  incremental bullets
+# Cool Story, Bro.
+
+- We need this.
+- We want this.
+- It's worth your time.
+- It's worth everyone's time.
+
+
+!SLIDE bullets incremental
+# Subprocess
+
+- Powerful
+- Effective
+- (Second) Worst API ever.
+- Documentation is severely lacking.
+
+
+!SLIDE bullets
+# (Proposed) Solution.
+
+![Moo](ext/moo.png)
+
+
+
 !SLIDE
-# urllib2
-
-"I'd rather be writing ColdFusion."
-
-!SLIDE small
-# subprocess
-
-A powerful module that .
-
-    @@@ python
-    import envoy
-
-    c = envoy.run('ls')
-.
-
-    @@@ pycon
-    >>> c.status_code
-    200
+# File and System Operations
+- sys | shutils | os | os.path | io
+- Really difficult to run external commands.
+- This blocks dev+ops folks from adopting Python.
 
 
+
+
+!SLIDE
+# Barriers to Entry
+
+
+!SLIDE incremental
+# Installing Python.
+
+Decisions, decisions.
+
+* Download installer from python.org?
+* 32bit or 64bit?
+* Build from source?
+* If so, Unix or framework build?
+
+!SLIDE
+### There should be one—and preferably only one—obvious way to do it.
+
+
+!SLIDE
+# XML
+
+- `etree` is terrible.
+- `lxml` is awesome, but difficult to install.
+
+
+!SLIDE incremental
+# Packaging and Dependencies
+- pip or easy_install?
+- setuptools isn't included with python?
+- Distribute? Why?
+- No easy_uninstall?
+- Broken `setup.py`s
+- "Released" packages not in the Cheeseshop
+
+!SLIDE incremental
+# Date[time]s.
+- Which module to use?
+- Timezones
+- The stdlib can generate but not parse ISO8601 dates
+
+!SLIDE
+# Unicode.
+
+!SLIDE
+# Testing.
+
+!SLIDE incremental
+# Installing Dependencies
+
+* python-mysql
+* PIL
+* mod_wsgi
+
+
+
+!SLIDE
+## Unless there's an explicit requirement,
+## a student should never be exposed to urllib2.
+
+# No excuses.
 
 
 
@@ -393,32 +399,11 @@ http://python-guide.org
 ![DON'T PANIC](ext/dont-panic.jpeg)
 
 
-!SLIDE
+!SLIDE bullets incremental
 - A guidebook for newcomers.
 - A reference for seasoned veterans.
 
-!SLIDE
-# There's only one rule.
-
-!SLIDE
-> There should be one—and preferably only one—obvious way to do it.
-
-!SLIDE
-# Topics
-
-!SLIDE
-# Installing Python Properly
-
-!SLIDE
-# Installing
-
-!SLIDE
-# Installing Python Properly
-
-!SLIDE
-# Installing Python Properly
-
-!SLIDE small
+!SLIDE small  bullets incremental
 # Best Practices
 
 - Will recommend **distribute**, **pip**, and **virtualenv** out of the box.
@@ -427,8 +412,28 @@ Explicit directions for setup on every major OS.
 - Teach `datetime.utcnow()`
 
 
-!SLIDE small
-# Installation Guides
+!SLIDE
+# There's only one rule.
 
-- PIL
-- Python-MySQL
+!SLIDE
+> There should be one—and preferably only one—obvious way to do it.
+
+
+!SLIDE
+# This Solves
+
+- Makes Python more accessible, lowering the barrier to entry.
+- Great reference guide for seasoned veterans.
+- Practice what we preach.
+
+
+!SLIDE red
+# THE MANIFESTO
+
+
+!SLIDE
+# Simplify terrible APIs.
+
+!SLIDE
+# Document our best-practices.
+
