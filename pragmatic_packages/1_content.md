@@ -1,5 +1,5 @@
 !SLIDE
-# Pragmatic Python
+# Python for Humans
 (or something to that effect)
 
 <!-- !SLIDE bullets incremental

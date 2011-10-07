@@ -1,9 +1,9 @@
 !SLIDE bullets
 
+* <s>API Design and Pragmatic Python</s>
 * <s>Python is a Ghetto</s>
 * <s>Python is a Cancer</s>
 * <s>Python Has Jumped the Shark</s>
-* **API Design and Pragmatic Python**
 
 !SLIDE
 # Hi.

@@ -1,4 +1,4 @@
-# API Design & Pragmatic Python
+# Python for Humans
 
 ## tl;dr
 
