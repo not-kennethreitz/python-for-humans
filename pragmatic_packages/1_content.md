@@ -73,11 +73,100 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
 
 !SLIDE
-# Part II: Beginnings
+# Barriers to Entry
 
-So, let's say we're new to Python.
 
-Let's get started!
+!SLIDE
+# Let's mess around.
+
+###  Maybe play with the GitHub API?
+
+
+!SLIDE small code
+
+## We know Ruby.
+
+    @@@ ruby
+    require 'net/http'
+    require 'uri'
+
+    uri = URI.parse('https://api.github.com/user')
+
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+
+    req = Net::HTTP::Get.new(uri.request_uri)
+    req.basic_auth('username', 'password')
+
+    r = http.request(req)
+
+    puts r
+
+!SLIDE
+# Python's net/http?
+
+## http/url/lib/2
+
+!SLIDE
+
+# Several hours later...
+
+!SLIDE smaller code execute
+
+    @@@ python
+    import urllib2
+
+    gh_url = 'https://api.github.com/user'
+
+    req = urllib2.Request(gh_url)
+
+    password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
+    password_manager.add_password(None, gh_url, 'user', 'pass')
+
+    auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
+    opener = urllib2.build_opener(auth_manager)
+
+    urllib2.install_opener(opener)
+
+    handler = urllib2.urlopen(req)
+
+    print handler.read()
+
+!SLIDE smaller code execute
+#I lied — there's more!
+
+    @@@ python
+
+    import re
+
+    class HTTPForcedBasicAuthHandler(HTTPBasicAuthHandler):
+
+        auth_header = 'Authorization'
+        rx = re.compile('(?:.*,)*[ \t]*([^ \t]+)[ \t]+'
+                        'realm=(["\'])(.*?)\\2', re.I)
+
+        def __init__(self,  *args, **kwargs):
+            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
+
+        def http_error_401(self, req, fp, code, msg, headers):
+            url = req.get_full_url()
+            response = self._http_error_auth_reqed(
+                'www-authenticate', url, req, headers)
+            self.reset_retry_count()
+            return response
+
+        http_error_404 = http_error_401
+
+!SLIDE
+# Admit it.
+
+If this was you, you'd leave Python and never come back.
+
+!SLIDE
+# Fuuuuuuuuuuuuu.
+
+
+
 
 !SLIDE
 # Step 1: Pick a Release.
@@ -118,11 +207,6 @@ Maybe play with the GitHub API?
 
     puts r
 
-!SLIDE
-# http/url/lib/2
-- Extremely unclear why there are so many modules.
-- Search implies urllib2.
-- Let's give this a shot...
 
 
 
@@ -217,84 +301,7 @@ Maybe play with the GitHub API?
 Dealing with things sensibly and realistically in a way that is
 based on practical rather than theoretical considerations.
 
-!SLIDE
-# An Examples.
 
-### Let's mess around. Maybe play with the GitHub API?
-!SLIDE
-
-
-
-!SLIDE small code
-
-    @@@ ruby
-    require 'net/http'
-    require 'uri'
-
-    uri = URI.parse('https://api.github.com/user')
-
-    http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
-
-    req = Net::HTTP::Get.new(uri.request_uri)
-    req.basic_auth('username', 'password')
-
-    r = http.request(req)
-
-    puts r
-
-## Let's port this to Python.
-
-!SLIDE smaller code execute
-# Python (hours later).
-    @@@ python
-    import urllib2
-
-    gh_url = 'https://api.github.com/user'
-
-    req = urllib2.Request(gh_url)
-
-    password_manager = urllib2.HTTPPasswordMgrWithDefaultRealm()
-    password_manager.add_password(None, gh_url, 'user', 'pass')
-
-    auth_manager = urllib2.HTTPBasicAuthHandler(password_manager)
-    opener = urllib2.build_opener(auth_manager)
-
-    urllib2.install_opener(opener)
-
-    handler = urllib2.urlopen(req)
-
-    print handler.read()
-
-!SLIDE smaller code execute
-#I lied — there's more!
-
-    @@@ python
-
-    import re
-
-    class HTTPForcedBasicAuthHandler(HTTPBasicAuthHandler):
-
-        auth_header = 'Authorization'
-        rx = re.compile('(?:.*,)*[ \t]*([^ \t]+)[ \t]+'
-                        'realm=(["\'])(.*?)\\2', re.I)
-
-        def __init__(self,  *args, **kwargs):
-            HTTPBasicAuthHandler.__init__(self, *args, **kwargs)s
-
-        def http_error_401(self, req, fp, code, msg, headers):
-            url = req.get_full_url()
-            response = self._http_error_auth_reqed(
-                'www-authenticate', url, req, headers)
-            self.reset_retry_count()
-            return response
-
-        http_error_404 = http_error_401
-
-!SLIDE
-# Admit it.
-
-If this was you, you'd leave Python and never come back.
 
 
 !SLIDE

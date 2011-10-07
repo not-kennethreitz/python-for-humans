@@ -36,9 +36,9 @@ github.com/kennethreitz
 
 * Requests: HTTP for Humans
 * Tablib: Pythonic Tabular Datasets
-* Legit: Awesome Git CLI
-* OSX-GCC-Installer: Risking it all
+* Legit: Awesome Git Interface
+* OSX-GCC-Installer: Angers Lawyers
 * Clint: Command-line Interface Tools
 * Envoy: Subprocess for Humans
-* Httpbin: Response Service
+* Httpbin.org: Requests & Response Service
 * ~197 Others
