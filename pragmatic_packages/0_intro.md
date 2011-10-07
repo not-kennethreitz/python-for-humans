@@ -34,11 +34,11 @@ github.com/kennethreitz
 
 !SLIDE incremental bullets small
 
-* Requests
-* Tablib
-* Legit
-* OSX-GCC-Installer
-* Clint
-* Envoy
-* HTTPBin
+* Requests: HTTP for Humans
+* Tablib: Pythonic Tabular Datasets
+* Legit: Awesome Git CLI
+* OSX-GCC-Installer: Risking it all
+* Clint: Command-line Interface Tools
+* Envoy: Subprocess for Humans
+* Httpbin: Response Service
 * ~197 Others
