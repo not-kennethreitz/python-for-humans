@@ -13,10 +13,10 @@
 
 
 !SLIDE
-# Part I: Philosophy
+# Philosophy.
 
 !SLIDE
-# Dark Pasts
+# We share a dark past:
 
 Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
@@ -25,16 +25,31 @@ Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
     >>> import this
 
 !SLIDE
-> Beautiful is better than ugly.
+## Beautiful is better than ugly.
+
 
 !SLIDE
-> Explicit is better than implicit.
+## Explicit is better than implicit.
+
 
 !SLIDE
-> Readability counts.
+## Simple is better than complex.
+
 
 !SLIDE
-> If the implementation is hard to explain, it's a bad idea.
+## Complex is better than complicated.
+
+
+!SLIDE incremental bullets
+### If the implementation is hard to explain, it's a bad idea.
+
+- <span class='smaller'>(except pypy)</span>
+
+
+!SLIDE
+### There should be one—and preferably only one—obvious way to do it.
+
+
 
 !SLIDE
 # Welcome to paradise.
@@ -77,9 +92,9 @@ Decisions, decisions.
 * If so, Unix or framework build?
 
 !SLIDE
-# Step 3: Profit!
+# Let's play around.
 
-Let's play around. Maybe play with the GitHub API?
+Maybe play with the GitHub API?
 
 
 !SLIDE small code execute
