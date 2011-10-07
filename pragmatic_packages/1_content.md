@@ -15,14 +15,17 @@
 !SLIDE
 # Philosophy.
 
+
 !SLIDE
 # We share a dark past:
 
 Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
+
 !SLIDE code
 # The Zen of Python.
     >>> import this
+
 
 !SLIDE
 ## Beautiful is better than ugly.
@@ -377,9 +380,11 @@ A powerful module that .
 !SLIDE
 ## The Hitchhiker's Guide to Python
 
-# DON'T PANIC!
-
 http://python-guide.org
+
+!SLIDE code top
+![DON'T PANIC](ext/dont-panic.jpeg)
+
 
 !SLIDE
 - A guidebook for newcomers.
