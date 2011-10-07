@@ -1,52 +1,38 @@
-!SLIDE
-# OCTOCATS!
+!SLIDE bullets
 
-(CRAZY JAVASCRIPT AWESOMENESS)
-
-!SLIDE
-
-:)
+* <s>Python is a Ghetto</s>
+* <s>Python is a Cancer</s>
+* <s>Python Has Jumped the Shark</s>
+* **API Design and Pragmatic Python**
 
 !SLIDE
-# Preface
+# Hi.
 
-!SLIDE bullets incremental
-# Name Iterations
 
-* Python is a Ghetto
-* Why Python Sucks
-* Python is a Cancer™
-* Kennethreitz Has Jumped the Shark™
+!SLIDE github bigger
+github.com/kennethreitz
 
 !SLIDE
 
-# **LIES**
+## I <span class='red'>♥</span> PYTHON!
 
 !SLIDE
 
-I ♥ PYTHON!
+![Readability™](ext/readability.png)
 
+!SLIDE github
 
-!SLIDE
-# ~Pragmatic Python
-(or something to that effect)
+## The GitHub Reflog.
 
+!SLIDE github
 
-!SLIDE
-Hi, may name is:
-github.com/
-# kennethreitz
-I build things.
+![The Changelog](ext/changelog.png)
 
 !SLIDE
-# I work.
-[COUCH]
 
-Readability.
+## I <span class='red'>♥</span> OPEN SOURCE!
 
-!SLIDE incremental smbullets
-
-# Projects
+!SLIDE incremental bullets small
 
 * Requests
 * Tablib
@@ -55,19 +41,4 @@ Readability.
 * Clint
 * Envoy
 * HTTPBin
-* ~198 Others
-
-!SLIDE
-# FOLLOW ME
-
-<3 OCTOCATS
-
-!SLIDE
-# Elsewhere
-
-The GitHub Reflog™
-
-The Changelog (logo)
-
-Always keeping on top of awesome new projects from all spaces, so if you know of anything that you think others need to hear about, shoot 'em over.
-
+* ~197 Others

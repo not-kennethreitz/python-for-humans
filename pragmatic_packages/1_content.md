@@ -1,28 +1,14 @@
 !SLIDE
-# ~Pragmatic Python
+# Pragmatic Python
 (or something to that effect)
 
+<!-- !SLIDE bullets incremental
+#yay
 
-!SLIDE
-# Goals
-- Invoke discussion
-- socratic solutions to anarchaic problems?
-- *Not* anarchy
-
-!SLIDE
-# For the record...
-
-- *Not* a
-
-!SLIDE
-# This talk is:
-
+- No ulterior motives.
 - A call for reevaluate our values
-- A
 - Most of the problems that we're going to discuss today are simple.
-
-
-
+ -->
 
 
 
@@ -32,11 +18,7 @@
 !SLIDE
 # Dark Pasts
 
-- Perl
-- Java
-- PHP
-- ColdFusion
-- Classic ASP
+Perl, Java, PHP, ColdFusion, Classic ASP, *&c*.
 
 !SLIDE code
 # The Zen of Python.
@@ -58,6 +40,9 @@
 # Welcome to paradise.
 
 !SLIDE
+# <s>Welcome to paradise.</s>
+
+!SLIDE red bigger
 # LIES!
 
 
