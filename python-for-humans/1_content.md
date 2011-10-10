@@ -2,15 +2,6 @@
 # Python for Humans
 (or something to that effect)
 
-<!-- !SLIDE bullets incremental
-#yay
-
-- No ulterior motives.
-- A call for reevaluate our values
-- Most of the problems that we're going to discuss today are simple.
- -->
-
-
 
 !SLIDE
 # Philosophy.
@@ -200,9 +191,9 @@ based on practical rather than theoretical considerations.
 !SLIDE incremental
 # Let's Break it down.
 
-What *is* HTTP at it's core?
+What *is* HTTP at its core?
 
-- a small set of methods with consistent parameters
+- A small set of methods with consistent parameters.
 - HEAD, GET, PUSH, POST, PUT, PATCH, DELETE
 - They all accept headers, url parameters, and form data.
 
@@ -240,7 +231,7 @@ What *is* HTTP at it's core?
 !SLIDE incremental
 # Achievement Unlocked!
 
-- a small set of methods with consistent parameters
+- A small set of methods with consistent parameters.
 - HEAD, GET, PUSH, POST, PUT, PATCH, DELETE
 - They all accept headers, url parameters, and form data.
 
@@ -348,8 +339,8 @@ Decisions, decisions.
 
 !SLIDE incremental
 # Packaging and Dependencies
-- pip or easy_install?
-- setuptools isn't included with python?
+- Pip or easy_install?
+- Setuptools isn't included with python?
 - Distribute? Why?
 - No easy_uninstall?
 - Broken `setup.py`s
