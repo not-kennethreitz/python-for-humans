@@ -273,7 +273,7 @@ find (or build) a new module.
 !SLIDE incremental bullets
 # Today
 - Cookies, sessions, content-iteration, decompression, file uploads, async i/o, keep-alive, callback hooks, proxies, *&c*.
-- 13th most–watched Python GitHub project.
+- 12th most–watched Python GitHub project.
 - 20,000+ downloads from PyPi.
 - Twitter, Library of Congress, Readability, etc.
 
