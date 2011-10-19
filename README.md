@@ -20,7 +20,8 @@
 
 - [schacon/showoff](https://github.com/schacon/showoff)
 - [Heroku](https://heroku.com)
-- [Octocat](http://www.redbull.com/)
+- [Octocats](http://octodex.github.com/)
+- [Redbull](http://www.redbull.com/)
 
 ## Special Thanks
 
