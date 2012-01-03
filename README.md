@@ -12,7 +12,7 @@
 ## Audio
 
 - [MP3](http://cl.ly/1h0y0k2F0D2K3F3V3J16/PyCodeConf2011_-_Kenneth_Reitz_01.mp3)
-- [OGG](http://codeconf.s3.amazonaws.com/2011/pycodeconf/talks/PyCodeConf2011%20-%20Craig%20Kerstiens.ogg)
+- [OGG](http://codeconf.s3.amazonaws.com/2011/pycodeconf/talks/PyCodeConf2011%20-%20Kenneth%20Reitz.ogg)
 - [M4A](http://codeconf.s3.amazonaws.com/2011/pycodeconf/talks/PyCodeConf2011%20-%20Kenneth%20Reitz.m4a)
 
 
