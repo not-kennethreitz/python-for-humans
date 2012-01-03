@@ -18,15 +18,11 @@ github.com/kennethreitz
 
 !SLIDE
 
-![Readability™](ext/readability.png)
+![Heroku™](ext/heroku.png)
 
 !SLIDE github
 
 ## The GitHub Reflog.
-
-!SLIDE github
-
-![The Changelog](ext/changelog.png)
 
 !SLIDE
 
